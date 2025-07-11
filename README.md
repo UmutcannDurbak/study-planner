@@ -37,6 +37,7 @@ Clone the repo and open `index.html` in your browser:
 ```bash
 git clone https://umutcanndurbak.github.io/study-planner/
 cd study-planner
-
+```
+---
 ## Live Demo
 [Live on GitHub Pages](https://umutcanndurbak.github.io/study-planner/)

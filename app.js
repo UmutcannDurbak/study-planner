@@ -64,6 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateStats() {
+    // Recalculate totalPlannedTime in case sessions changed
+    totalPlannedTime = sessions.reduce((sum, s) => sum + Number(s.duration), 0);
     const productivity = totalPlannedTime
       ? Math.round((totalFocusedTime / totalPlannedTime) * 100)
       : 0;
@@ -155,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTimerDisplay();
       }
     }, 1000);
-    updateStats(); // update stats immediately when timer starts
+    // updateStats(); // Remove this line, stats should only update when time is up
   }
 
   function resetTimer() {
@@ -164,11 +166,12 @@ document.addEventListener('DOMContentLoaded', () => {
     remaining = timerDuration;
     updateTimerDisplay();
     setTimerButtons(false);
-    updateStats(); // update stats immediately when timer resets
+    // updateStats(); // Remove this line, stats should only update when time is up
   }
 
   if (startBtn) startBtn.addEventListener("click", startTimer);
   if (resetBtn) resetBtn.addEventListener("click", resetTimer);
   updateTimerDisplay();
   setTimerButtons(false);
+  updateStats(); // Ensure stats are correct on load
 });
