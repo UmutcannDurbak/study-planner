@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Planner & Focus Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Study Planner</h1>
+    <button id="theme-toggle">Toggle Theme</button>
+  </header>
+
+  <main>
+    <section id="timer-section">
+      <h2>Focus Timer</h2>
+      <div id="timer-display">25:00</div>
+      <button id="start-timer">Start</button>
+      <button id="reset-timer">Reset</button>
+      <div id="total-focus">Total Focus Time: 0 min</div>
+      <div id="productivity">Productivity: 0%</div>
+    </section>
+
+    <section id="session-section">
+      <h2>Add New Session</h2>
+      <form id="new-session">
+        <input id="title" type="text" placeholder="Session Title" required />
+        <input id="tag" type="text" placeholder="Tag (e.g. Math)" required />
+        <input id="duration" type="number" placeholder="Duration (min)" min="5" required />
+        <button type="submit">Add Session</button>
+      </form>
+      <div id="feedback" class="feedback"></div>
+      <h2>Sessions</h2>
+      <ul id="session-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Designed & Coded by Umutcan Durbak — 2025</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
