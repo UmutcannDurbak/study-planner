@@ -17,7 +17,7 @@ A minimal yet powerful web application to plan your study sessions, stay focused
 
 ## 🖼️ Screenshot
 
-![Study Planner Demo](https://prnt.sc/311ZSi8mSd_d)
+![Study Planner Demo](https://ibb.co/rGS903qX)
 
 ---
 
@@ -37,3 +37,6 @@ Clone the repo and open `index.html` in your browser:
 ```bash
 git clone https://umutcanndurbak.github.io/study-planner/
 cd study-planner
+
+## Live Demo
+[Live on GitHub Pages](https://umutcanndurbak.github.io/study-planner/)

@@ -49,9 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
     sessions.forEach((session, index) => {
       totalPlannedTime += session.duration;
       const li = document.createElement("li");
+      li.className = "session-item";
       li.innerHTML = `
-        <strong>${session.title}</strong> - ${session.duration} min [${session.tag}]
-        <button class="delete-btn" data-index="${index}" style="float:right">❌</button>
+        <div class="session-info">
+          <strong>${session.title}</strong> - ${session.duration} min [${session.tag}]
+        </div>
+        <button class="delete-btn" data-index="${index}" title="Remove session" aria-label="Remove session">
+          <span class="remove-icon">❌</span>
+        </button>
       `;
       sessionList.appendChild(li);
     });
@@ -150,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTimerDisplay();
       }
     }, 1000);
+    updateStats(); // update stats immediately when timer starts
   }
 
   function resetTimer() {
@@ -158,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     remaining = timerDuration;
     updateTimerDisplay();
     setTimerButtons(false);
+    updateStats(); // update stats immediately when timer resets
   }
 
   if (startBtn) startBtn.addEventListener("click", startTimer);
